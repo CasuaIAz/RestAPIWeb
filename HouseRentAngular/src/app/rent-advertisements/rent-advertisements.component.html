@@ -1,0 +1,27 @@
+<div>
+    <span class="help is-info" *ngIf="isLoading">Loading...</span>
+    <span class="help is-error" *ngIf="errorMessage">{{ errorMessage }}</span>
+    <table class="table" *ngIf="!isLoading && !errorMessage">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ad name</th>
+                <th>Created at</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let rents of data?.result">
+                <td>{{ rents.id }}</td>
+                <td>{{ rents.adName }}</td>
+                <td>{{ rents.created_at }}</td>
+                <td>{{ rents.description }}</td>
+                <td>{{ rents.price }}</td>
+                <td>
+                    <button class="button is-primary">Delete Rent</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
